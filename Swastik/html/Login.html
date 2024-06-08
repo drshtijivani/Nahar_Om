@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+  <title>Swastik</title>
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="Login.css">
+  
+
+  
+</head>
+<body>
+    <h2>User Data</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="register.php" id="registerForm" method="post"> <!-- Added id to the form -->
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Username" name="username" minlength="4" maxlength="32" required />
+			<input type="email" placeholder="Email" name="email" required />
+			<input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}" required />
+			
+			<div class="gender-container">
+				
+				<input type="radio" name="gender" value="male" required > Male
+				<input type="radio" name="gender" value="female" required > Female
+				<input type="radio" name="gender" value="other" required > Other
+			</div>
+			
+			<div class="skills-container">
+				<label for="skills" style="margin-bottom: 10px;">Skills</label>
+				<select id="skills" name="skills" required>
+					<option value="JS">JavaScript</option>
+					<option value="React">React</option>
+					<option value="API">API</option>
+					<option value="Backend">Backend</option>
+				</select>
+			</div>
+			
+			
+			<div class="button-container">
+				<button type="reset">Reset</button>
+				<button type="submit" name="register">Submit</button> <!-- Added name attribute to the submit button -->
+			</div>
+		</form>
+		
+
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="login.php" method="POST" id="loginForm">
+		  <h1>Login</h1>
+		  <div class="social-container">
+			<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+			<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+			<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+		  </div>
+		  <span>or use your account</span>
+		  <input type="email" placeholder="Email" name="email" required />
+		  <input type="password" placeholder="Password" name="password" required />
+		  <button type="submit" name="login">Login</button>
+		</form>
+	  </div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+</script>
+
+</body>
+</html>
